@@ -2,6 +2,7 @@
 #define ROUTE_H
 
 #include "Ville.h"
+#include "Joueur.h"
 #include "Couleur.h"
 #include "CarteTrain.h"
 #include <vector>
@@ -21,13 +22,13 @@ public:
     Route();
     Route(const Ville& a, const Ville& b, int longueur, Couleur couleur, bool estDouble = false);
 
-    const Ville& getVilleA() const;
-    const Ville& getVilleB() const;
-    int getLongueur() const;
-    Couleur getCouleur() const;
-    bool getEstDouble() const;
-    void setEstDouble(bool val);
-    Joueur* getProprietaire() const;
+    const Ville& getVilleA() const      { return villeA; }
+    const Ville& getVilleB() const      { return villeB; }
+    Couleur getCouleur() const          { return couleur; }
+    int getLongueur() const             { return longueur; }
+    bool getEstDouble() const           { return estDouble; }
+    void setEstDouble(bool val)         { estDouble = val; }
+    Joueur* getProprietaire() const  { return proprietaire; }
 
     bool estDisponible() const;
     bool prendre(Joueur& j, std::vector<CarteTrain>& cartes);

@@ -6,6 +6,8 @@
 #include <random>
 #include <stdexcept>
 
+
+// class template donc les methodes doivent être écrites dans le cpp pour la compilation
 template<typename T>
 class Pioche {
 private:
@@ -19,7 +21,6 @@ public:
         cartes.push_back(carte);
     }
 
-    // si la pioche est vide on recycle la défausse avant de tirer
     T piocher() {
         if (estVide()) recyclerDefausse();
         if (estVide()) throw std::runtime_error("Pioche vide");
@@ -42,7 +43,6 @@ public:
         return defausse.empty();
     }
 
-    // remet toute la défausse dans la pioche et mélange
     void recyclerDefausse() {
         cartes.insert(cartes.end(), defausse.begin(), defausse.end());
         defausse.clear();

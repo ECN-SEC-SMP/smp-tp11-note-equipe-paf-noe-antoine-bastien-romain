@@ -3,9 +3,11 @@
 
 #include <string>
 #include <vector>
+#include "Ticket.h"
+#include "Route.h"
+#include "Plateau.h"
 #include "Couleur.h"
 #include "CarteTrain.h"
-#include "Ticket.h"
 #include "Pioche.h"
 
 class Route;
@@ -25,23 +27,22 @@ public:
     Joueur();
     Joueur(const std::string& nom, Couleur couleur);
 
-    const std::string& getNom() const;
-    Couleur getCouleur() const;
-    int getWagonsRestants() const;
-    const std::vector<CarteTrain>& getMainCartes() const;
-    std::vector<Ticket>& getTickets();
-    int getTicketsReussis() const;
-    bool getAGrandeTraversee() const;
+    const std::string& getNom() const                       { return nom; }
+    Couleur getCouleur() const                              { return couleur; }
+    int getWagonsRestants() const                           { return wagonsRestants; }
+    const std::vector<CarteTrain>& getMainCartes() const    { return mainCartes; }
+    std::vector<Ticket>& getTickets()                       { return tickets; }
+    int getTicketsReussis() const                           { return ticketsReussis; }
+    bool getAGrandeTraversee() const                        { return aGrandeTraversee; }
 
-    void setAGrandeTraversee(bool val);
-    void incrementerTicketsReussis();
+    void setAGrandeTraversee(bool val)                      { aGrandeTraversee = val; }
+    void incrementerTicketsReussis()                        { ticketsReussis++; }
 
     void ajouterCarte(const CarteTrain& carte);
     void ajouterTicket(const Ticket& ticket);
-    void utiliserCartes(const std::vector<CarteTrain>& cartes);
-    void diminuerWagons(int n);
+    void ajouterTicket(const Ticket& ticket);
+    void diminuerWagons(int n);                             { wagonsRestants -= n;}
 
-    /// sélectionne d'abord les cartes de la bonne couleur, puis complète avec des locomotives si nécessaire
     std::vector<CarteTrain> selectionnerCartes(Couleur couleur, int longueur) const;
 
     void piocher(Pioche<CarteTrain>& pioche);

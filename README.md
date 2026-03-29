@@ -46,6 +46,7 @@ La partie s'arrête dès qu'un joueur :
 ### Build
 
 ```bash
+mkdir build
 cd build
 cmake ..
 make
