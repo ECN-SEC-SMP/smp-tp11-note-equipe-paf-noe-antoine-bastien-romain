@@ -80,6 +80,8 @@ Les tests unitaires utilisent **Google Test**, téléchargé automatiquement par
 
 ### Compiler les tests
 
+dans le repertoire du projet (pas dans build/ !!!!)
+
 ```bash
 cmake --build build --target tests
 ```
