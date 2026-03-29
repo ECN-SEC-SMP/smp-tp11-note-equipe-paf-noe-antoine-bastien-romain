@@ -25,6 +25,7 @@ public:
     std::vector<Route*> getVoisines(const Ville& v);
     bool routeDisponible(const Route& r) const;
 
+    /// BFS sur les routes possédées par joueur pour vérifier la connexité entre depart et arrivee
     bool existeCheminJoueur(const Ville& depart, const Ville& arrivee, Joueur& joueur) const;
 
     void chargerCSV(const std::string& fichier);

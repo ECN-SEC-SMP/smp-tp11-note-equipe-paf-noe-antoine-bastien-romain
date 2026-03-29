@@ -1,1 +1,6 @@
 build
+*.pdf
+*.md
+!README.md
+docs
+tests

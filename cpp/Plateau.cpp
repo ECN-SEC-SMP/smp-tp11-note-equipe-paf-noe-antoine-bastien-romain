@@ -1,7 +1,7 @@
 #include "../headers/Plateau.h"
 #include "../headers/Joueur.h"
-#include <fstream>
-#include <sstream>
+#include <fstream> 
+#include <sstream>  
 #include <iostream>
 #include <queue>
 #include <set>
@@ -47,8 +47,7 @@ bool Plateau::routeDisponible(const Route& r) const {
 }
 
 bool Plateau::existeCheminJoueur(const Ville& depart, const Ville& arrivee, Joueur& joueur) const {
-
-    
+    // BFS : on explores uniquement les routes appartenant à ce joueur
     std::set<std::string> visites;
     std::queue<std::string> file;
 
@@ -63,6 +62,7 @@ bool Plateau::existeCheminJoueur(const Ville& depart, const Ville& arrivee, Joue
 
         for (const auto& route : routes) {
             if (route.getProprietaire() != &joueur) continue;
+            // la route est bidirectionnelle, on regarde dans les deux sens
             std::string suivant;
             if (route.getVilleA().getNom() == courant) suivant = route.getVilleB().getNom();
             else if (route.getVilleB().getNom() == courant) suivant = route.getVilleA().getNom();
@@ -76,22 +76,23 @@ bool Plateau::existeCheminJoueur(const Ville& depart, const Ville& arrivee, Joue
 }
 
 void Plateau::chargerCSV(const std::string& fichier) {
-    std::ifstream f(fichier);
+    std::ifstream f(fichier); // ouvre le fichier en lecture seule (fstream)
     if (!f.is_open()) {
         std::cerr << "Impossible d'ouvrir " << fichier << "\n";
         return;
     }
 
     std::string ligne;
-    std::getline(f, ligne); //getlinbe permet de recup une ligne sous la forme d'un str en comptant les espace dcp c'est plutôt pratique
+    std::getline(f, ligne); // saute la ligne d'en-tête
 
+    // lit le fichier ligne par ligne jusqu'à la fin (getline retourne false en cas d'échec ou EOF)
     while (std::getline(f, ligne)) {
         if (ligne.empty()) continue;
 
-        std::istringstream ss(ligne);
+        std::istringstream ss(ligne); // transforme la ligne en flux pour extraire les champs avec getline (sstream)
         std::string nomA, nomB, couleurStr, longueurStr;
 
-        std::getline(ss, nomA, ',');
+        std::getline(ss, nomA, ','); // extrait le prochain champ en utilisant ',' comme délimiteur au lieu de '\n'
         std::getline(ss, nomB, ',');
         std::getline(ss, couleurStr, ',');
         std::getline(ss, longueurStr, ',');
@@ -114,6 +115,7 @@ void Plateau::chargerCSV(const std::string& fichier) {
     }
 
 
+    // détecte les routes parallèles (même paire de villes, ordre AB ou BA) et les marques comme doubles
     for (unsigned int i = 0; i < routes.size(); ++i) {
         for (unsigned int j = i + 1; j < routes.size(); ++j) {
             bool memeAB = routes[i].getVilleA().getNom() == routes[j].getVilleA().getNom() && routes[i].getVilleB().getNom() == routes[j].getVilleB().getNom();
