@@ -60,6 +60,20 @@ cd build
 
 ---
 
+## Documentation
+
+La documentation est générée avec **Doxygen** à partir des commentaires du code source.
+
+### Générer la doc
+
+```bash
+doxygen Doxyfile
+```
+
+La documentation HTML est produite dans `docs/html/`. Ouvrir `docs/html/index.html` dans un navigateur pour la consulter.
+
+---
+
 ## Tests
 
 Les tests unitaires utilisent **Google Test**, téléchargé automatiquement par CMake.
