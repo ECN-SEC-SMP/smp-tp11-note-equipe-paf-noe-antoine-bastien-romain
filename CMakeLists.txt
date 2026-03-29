@@ -23,18 +23,20 @@ add_executable(aventuriers ${SOURCES})
 configure_file(src/map.csv ${CMAKE_BINARY_DIR}/src/map.csv COPYONLY)
 configure_file(src/ticket.csv ${CMAKE_BINARY_DIR}/src/ticket.csv COPYONLY)
 
-# ─── Google Test ────────────────────────────────────────────────────────────
+# tests
+
 
 include(FetchContent)
 FetchContent_Declare(
     googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_REPOSITORY https://github.com/google/googletest.git #trouver un lien mirror éventuellement car j'ai eu des galères 
     GIT_TAG v1.17.0
     DOWNLOAD_EXTRACT_TIMESTAMP TRUE
 )
 set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
+
 
 enable_testing()
 
@@ -50,7 +52,12 @@ set(TEST_SOURCES
     tests/tests.cpp
 )
 
+
+
 add_executable(tests ${TEST_SOURCES})
 target_link_libraries(tests GTest::gtest_main)
 include(GoogleTest)
+
+
+
 gtest_discover_tests(tests)

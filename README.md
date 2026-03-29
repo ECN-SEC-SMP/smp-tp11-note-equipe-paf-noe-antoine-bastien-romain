@@ -1,8 +1,4 @@
-# Les Aventuriers du Rail – Mon Premier Voyage
-
-Implémentation en C++ du jeu de plateau Les Aventuriers du Rail – Mon Premier Voyage, jouable de 2 à 4 joueurs en mode texte.
-
----
+# Les Aventuriers du Rail – TP11
 
 ## Règles du jeu
 
@@ -46,17 +42,13 @@ La partie s'arrête dès qu'un joueur :
 
 ## Compilation et exécution
 
-### Prérequis
-
-- CMake ≥ 3.10
-- Compilateur C++17 (g++, clang++)
-- Connexion internet (pour le téléchargement de Google Test au premier build)
 
 ### Build
 
 ```bash
-cmake -B build
-cmake --build build
+cd build
+cmake ..
+make
 ```
 
 ### Lancer le jeu
@@ -65,8 +57,6 @@ cmake --build build
 cd build
 ./aventuriers
 ```
-
-> Le jeu doit être lancé depuis le dossier `build/` afin de trouver les fichiers de données `src/map.csv` et `src/ticket.csv`.
 
 ---
 
@@ -82,11 +72,6 @@ cmake --build build --target tests
 
 ### Exécuter les tests
 
-```bash
-cd build && ctest
-```
-
-ou directement :
 
 ```bash
 cd build && ./tests
