@@ -1,6 +1,5 @@
-build
-*.pdf
-*.md
-!README.md
-docs
-tests
+build/
+docs/
+out.md
+test.md
+tp-template.pdf
