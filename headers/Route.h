@@ -2,10 +2,10 @@
 #define ROUTE_H
 
 #include "Ville.h"
-//#include "Joueur.h"
+#include "Joueur.h"
 #include <vector>
 
-//class Joueur; // en attente de création
+class Joueur;
 
 class Route {
 private:
@@ -13,7 +13,7 @@ private:
     Ville villeB;
     int longueur;
     bool estDouble;
-    //Joueur* proprietaire;
+    Joueur* proprietaire;
 
 public:
     Route();
@@ -24,7 +24,7 @@ public:
     int getLongueur() const             { return longueur; }
     bool getEstDouble() const           { return estDouble; }
     void setEstDouble(bool val)         { estDouble = val; }
-    // Joueur* getProprietaire() const  { return proprietaire; }
+    Joueur* getProprietaire() const  { return proprietaire; }
 
     bool estDisponible() const;
 };
