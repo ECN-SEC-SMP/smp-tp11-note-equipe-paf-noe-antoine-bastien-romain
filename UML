@@ -1,0 +1,98 @@
+classDiagram
+  class Jeu {
+    -plateau : Plateau
+    -joueurs : vector~Joueur~
+    -pioceCartes : Pioche~CarteTrain~
+    -pioceTickets : Pioche~Ticket~
+    -defausseCartes : vector~CarteTrain~
+    -defausseTickets : vector~Ticket~
+    -joueurCourant : int
+    +initialiser(nbJoueurs: int) void
+    +jouerTour() void
+    +verifierFinPartie() bool
+    +afficherEtat() void
+    +chargerDonnees(fichier: string) void
+  }
+
+  class Plateau {
+    -villes : vector~Ville~
+    -routes : vector~Route~
+    +getVoisines(v: Ville) vector~Route~
+    +routeDisponible(r: Route) bool
+    +chargerCSV(fichier: string) void
+  }
+
+  class Joueur {
+    -nom : string
+    -couleur : Couleur
+    -wagonsRestants : int
+    -mainCartes : vector~CarteTrain~
+    -tickets : vector~Ticket~
+    -ticketsReussis : int
+    -aGrandeTraversee : bool
+    +piocher(pioche: Pioche) void
+    +poserWagons(r: Route, cartes: vector~CarteTrain~) bool
+    +echangerTickets(pioche: Pioche) void
+    +verifierTickets(plateau: Plateau) void
+    +aGagne() bool
+  }
+
+  class Route {
+    -villeA : Ville
+    -villeB : Ville
+    -longueur : int
+    -couleur : Couleur
+    -estDouble : bool
+    -proprietaire : Joueur*
+    +estDisponible() bool
+    +prendre(j: Joueur, cartes: vector~CarteTrain~) bool
+  }
+
+  class Ville {
+    -nom : string
+    -estCoteOuest : bool
+    -estCoteEst : bool
+  }
+
+  class CarteTrain {
+    -couleur : Couleur
+    +estLocomotive() bool
+  }
+
+  class Ticket {
+    -villeDepart : Ville
+    -villeArrivee : Ville
+    -estReussi : bool
+    +verifier(joueur: Joueur, plateau: Plateau) bool
+  }
+
+  class Pioche~T~ {
+    -cartes : vector~T~
+    -defausse : vector~T~
+    +piocher() T
+    +melanger() void
+    +estVide() bool
+    +recyclerDefausse() void
+  }
+
+  class Couleur {
+    <<enumeration>>
+    ROUGE
+    JAUNE
+    VERT
+    BLEU
+    BLANC
+    NOIR
+    LOCOMOTIVE
+  }
+
+  Jeu "1" --> "1" Plateau : utilise
+  Jeu "1" --> "2..4" Joueur : gère
+  Jeu "1" --> "1" Pioche : contient
+  Plateau "1" --> "*" Route : contient
+  Plateau "1" --> "*" Ville : contient
+  Route "1" --> "2" Ville : relie
+  Joueur "1" --> "*" CarteTrain : possède
+  Joueur "1" --> "*" Ticket : possède
+  Route --> Couleur
+  CarteTrain --> Couleur
