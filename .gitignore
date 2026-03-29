@@ -1,5 +1,7 @@
-build/
-docs/
+build/*
+docs/*
+docs
+build
 out.md
 test.md
 tp-template.pdf

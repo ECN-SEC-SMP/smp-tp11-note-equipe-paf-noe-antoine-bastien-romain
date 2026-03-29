@@ -1,8 +1,0 @@
-<map id="Joueur::piocher" name="Joueur::piocher">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,124,83"/>
-<area shape="rect" id="node2" href="$classJoueur.html#a7d41a17ded2e3b8b32b776080f3b49aa" title=" " alt="" coords="172,5,324,32"/>
-<area shape="rect" id="node3" href="$classPioche.html#a5b9183764765afe4c60c33e2d0a75aae" title=" " alt="" coords="404,56,527,83"/>
-<area shape="rect" id="node4" href="$classPioche.html#aa123ee1da968019a12cd0da46b9ccda8" title=" " alt="" coords="187,107,309,133"/>
-<area shape="rect" id="node5" href="$classPioche.html#a5fa151a9324b724a3ed607b7e8275dad" title=" " alt="" coords="372,107,559,133"/>
-<area shape="rect" id="node6" href="$classPioche.html#ab6ede66c3c2b89afb04de18a69b085bd" title=" " alt="" coords="607,107,741,133"/>
-</map>

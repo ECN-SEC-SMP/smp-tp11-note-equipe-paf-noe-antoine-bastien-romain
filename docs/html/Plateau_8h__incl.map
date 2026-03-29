@@ -1,9 +1,0 @@
-<map id="headers/Plateau.h" name="headers/Plateau.h">
-<area shape="rect" id="node1" title=" " alt="" coords="11,5,150,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="24,155,86,181"/>
-<area shape="rect" id="node3" title=" " alt="" coords="107,304,166,331"/>
-<area shape="rect" id="node4" href="$Ville_8h.html" title=" " alt="" coords="110,155,173,181"/>
-<area shape="rect" id="node5" href="$Route_8h.html" title=" " alt="" coords="143,80,215,107"/>
-<area shape="rect" id="node6" href="$Couleur_8h.html" title=" " alt="" coords="174,229,256,256"/>
-<area shape="rect" id="node7" href="$CarteTrain_8h.html" title=" " alt="" coords="249,155,349,181"/>
-</map>

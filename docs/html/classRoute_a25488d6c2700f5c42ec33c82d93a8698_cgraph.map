@@ -1,7 +1,0 @@
-<map id="Route::prendre" name="Route::prendre">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,124,108"/>
-<area shape="rect" id="node2" href="$classJoueur.html#a6b4dd3130d045db85c9e493b30820a49" title=" " alt="" coords="182,5,362,32"/>
-<area shape="rect" id="node3" href="$classRoute.html#a5ca93e3372c742b07eb4de6eb12de4f4" title=" " alt="" coords="193,56,351,83"/>
-<area shape="rect" id="node4" href="$classJoueur.html#aa8e7d23dffd79e1c24466ffa9b46b974" title=" " alt="" coords="172,107,372,133"/>
-<area shape="rect" id="node5" href="$classJoueur.html#a1c38d186afe0d557e5d6a925ef54f4df" title=" " alt="" coords="193,157,351,184"/>
-</map>

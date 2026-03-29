@@ -1,8 +1,0 @@
-<map id="Joueur::poserWagons" name="Joueur::poserWagons">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,164,108"/>
-<area shape="rect" id="node2" href="$classRoute.html#a25488d6c2700f5c42ec33c82d93a8698" title=" " alt="" coords="212,81,331,108"/>
-<area shape="rect" id="node3" href="$classJoueur.html#a6b4dd3130d045db85c9e493b30820a49" title=" " alt="" coords="389,5,569,32"/>
-<area shape="rect" id="node4" href="$classRoute.html#a5ca93e3372c742b07eb4de6eb12de4f4" title=" " alt="" coords="400,56,557,83"/>
-<area shape="rect" id="node5" href="$classJoueur.html#aa8e7d23dffd79e1c24466ffa9b46b974" title=" " alt="" coords="379,107,579,133"/>
-<area shape="rect" id="node6" href="$classJoueur.html#a1c38d186afe0d557e5d6a925ef54f4df" title=" " alt="" coords="399,157,558,184"/>
-</map>
